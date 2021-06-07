@@ -2,7 +2,10 @@ package com.cj.whiskyhunter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -16,10 +19,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     ListView listWhiskys;
-    List<Whisky> myWhisky;
+    List<Whisky> myWhiskys;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         listWhiskys = findViewById(R.id.lvWhiskys);
         getWhiskysFromApi();
+        listWhiskys.setOnItemClickListener(this);
     }
 
     private void getWhiskysFromApi() {
@@ -35,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<Whisky>>() {
             @Override
             public void onResponse(Call<List<Whisky>> call, Response<List<Whisky>> response) {
-                myWhisky = response.body();
+                myWhiskys = response.body();
 
-                WhiskyAdapter adapter = new WhiskyAdapter(MainActivity.this, myWhisky);
+                WhiskyAdapter adapter = new WhiskyAdapter(MainActivity.this, myWhiskys);
                 listWhiskys.setAdapter(adapter);
             }
 
@@ -46,5 +50,12 @@ public class MainActivity extends AppCompatActivity {
                 Toasty.error(getApplicationContext(), "Ocurrió un error", Toast.LENGTH_SHORT, true).show();
             }
         });
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this, WhiskyDetail.class);
+        intent.putExtra("objetoWhisky", myWhiskys.get(position));
+        startActivity(intent);
     }
 }
