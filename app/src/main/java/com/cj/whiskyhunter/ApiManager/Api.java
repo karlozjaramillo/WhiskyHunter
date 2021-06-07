@@ -1,5 +1,6 @@
 package com.cj.whiskyhunter.ApiManager;
 
+import com.cj.whiskyhunter.models.Distillery;
 import com.cj.whiskyhunter.models.Whisky;
 
 import java.util.List;
@@ -12,4 +13,7 @@ public interface Api {
 
     @GET("auctions_info")
     Call<List<Whisky>> getWhiskys();
+
+    @GET("distilleries_info")
+    Call<List<Distillery>> getDistilleries();
 }

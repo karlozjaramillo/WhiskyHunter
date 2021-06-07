@@ -21,6 +21,7 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
         btnWhiskys = findViewById(R.id.btnWhiskys);
         btnDistilleries = findViewById(R.id.btnDistilleries);
         btnWhiskys.setOnClickListener(this);
+        btnDistilleries.setOnClickListener(this);
     }
 
     @Override
@@ -30,6 +31,9 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.btnDistilleries:
+                Intent intent1 = new Intent(this, Distilleries.class);
+                startActivity(intent1);
         }
     }
 }
