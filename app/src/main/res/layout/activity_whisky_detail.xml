@@ -7,6 +7,15 @@
     android:background="@color/black"
     tools:context=".WhiskyDetail">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/whiskys" />
+
     <TextView
         android:id="@+id/txtNameWhiskyDetail"
         android:layout_width="409dp"
@@ -39,29 +48,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNameWhiskyDetail" />
-
-    <Button
-        android:id="@+id/btnProducer"
-        android:layout_width="330dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="50dp"
-        android:text="WEBSITE"
-        android:textSize="24sp"
-        app:backgroundTint="#A69138"
-        app:cornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBaseCurrencyWhiskyDetail" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/whiskys" />
 
     <TextView
         android:id="@+id/txtBuyersFeeWhiskyDetail"
@@ -128,5 +114,19 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtReserveFeeWhiskyDetail" />
+
+    <Button
+        android:id="@+id/btnProducer"
+        android:layout_width="330dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:text="WEBSITE"
+        android:textSize="24sp"
+        app:backgroundTint="#A69138"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBaseCurrencyWhiskyDetail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

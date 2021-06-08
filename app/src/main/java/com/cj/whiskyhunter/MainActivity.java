@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this, WhiskyDetail.class);
-        intent.putExtra("objetoWhisky", myWhiskys.get(position));
+        intent.putExtra("objWhisky", myWhiskys.get(position));
         startActivity(intent);
     }
 }

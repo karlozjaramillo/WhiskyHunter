@@ -43,7 +43,7 @@ public class WhiskyDetail extends AppCompatActivity implements View.OnClickListe
         btnProducer = findViewById(R.id.btnProducer);
         btnProducer.setOnClickListener(this);
 
-        Whisky whisky = (Whisky) getIntent().getSerializableExtra("objetoWhisky");
+        Whisky whisky = (Whisky) getIntent().getSerializableExtra("objWhisky");
         txtNameWhiskyDetail.setText(whisky.getNameWhisky());
         txtSlugWhiskyDetail.setText("Slug: " + whisky.getSlugWhisky());
         txtBuyersFeeWhiskyDetail.setText("Buyers Fee: " + whisky.getBuyersFeeWhisky());

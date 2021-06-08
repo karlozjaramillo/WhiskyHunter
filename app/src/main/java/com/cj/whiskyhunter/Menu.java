@@ -28,12 +28,12 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnWhiskys:
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
+                Intent intentWhiskys = new Intent(this, MainActivity.class);
+                startActivity(intentWhiskys);
                 break;
             case R.id.btnDistilleries:
-                Intent intent1 = new Intent(this, Distilleries.class);
-                startActivity(intent1);
+                Intent intentDistilleries = new Intent(this, Distilleries.class);
+                startActivity(intentDistilleries);
         }
     }
 }

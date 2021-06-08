@@ -2,7 +2,10 @@ package com.cj.whiskyhunter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -16,7 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Distilleries extends AppCompatActivity {
+public class Distilleries extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     ListView listDistilleries;
     List<Distillery> myDistilleries;
@@ -28,6 +31,7 @@ public class Distilleries extends AppCompatActivity {
 
         listDistilleries = findViewById(R.id.lvDistilleries);
         getDistilleriesFromApi();
+        listDistilleries.setOnItemClickListener(this);
     }
 
     private void getDistilleriesFromApi() {
@@ -46,5 +50,12 @@ public class Distilleries extends AppCompatActivity {
                 Toasty.error(getApplicationContext(), "Ocurrió un error", Toast.LENGTH_SHORT, true).show();
             }
         });
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this, DistilleryDetail.class);
+        intent.putExtra("objDistillery", myDistilleries.get(position));
+        startActivity(intent);
     }
 }
