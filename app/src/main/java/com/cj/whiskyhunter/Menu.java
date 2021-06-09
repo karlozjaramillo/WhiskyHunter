@@ -26,7 +26,7 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btnWhiskys:
                 Intent intentWhiskys = new Intent(this, MainActivity.class);
                 startActivity(intentWhiskys);

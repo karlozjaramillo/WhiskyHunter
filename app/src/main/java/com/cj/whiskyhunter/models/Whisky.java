@@ -29,7 +29,9 @@ public class Whisky implements Serializable {
     @SerializedName("base_currency")
     private String baseCurrencyWhisky;
 
-    public Whisky(String nameWhisky, String slugWhisky, String urlWhisky, String buyersFeeWhisky, String sellersFeeWhisky, String reserveFeeWhisky, String listingFeeWhisky, String baseCurrencyWhisky) {
+    public Whisky(String nameWhisky, String slugWhisky, String urlWhisky, String buyersFeeWhisky,
+                  String sellersFeeWhisky, String reserveFeeWhisky, String listingFeeWhisky,
+                  String baseCurrencyWhisky) {
         this.nameWhisky = nameWhisky;
         this.slugWhisky = slugWhisky;
         this.urlWhisky = urlWhisky;
